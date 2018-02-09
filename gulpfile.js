@@ -14,9 +14,6 @@ const uglify = require('gulp-uglify');
 // sass -> css
 const sass = require('gulp-ruby-sass');
 
-// image minify
-const smushit = require('gulp-smushit');
-
 // html minify
 const htmlmin = require('gulp-htmlmin');
 
@@ -29,14 +26,11 @@ const opts = {
   scssFiles: './src/scss/*.scss',
   distCss: './dist/css',
 
-  imgFiles: './src/img/*.*',
-  distImg: './dist/img/',
-
   htmlFiles: './src/html/*.html',
   distHtml: './',
 
   watchFiles: ['src/html/*.html', 'src/scss/*.scss', 'src/js/*.js', 'src/img/*.*'],
-  watchTasks: ['babel', 'browserify', 'sass', 'img', 'html'],
+  watchTasks: ['babel', 'browserify', 'sass', 'html'],
 };
 
 gulp.task('connect', () => {
@@ -72,15 +66,6 @@ gulp.task('sass', () => (
     .pipe(gulp.dest(opts.distCss))
 ));
 
-gulp.task('img', () => {
-  gulp.src(opts.imgFiles)
-    .pipe(connect.reload())
-    .pipe(smushit({
-      verbose: true,
-    }))
-    .pipe(gulp.dest(opts.distImg));
-});
-
 gulp.task('html', () => {
   gulp.src(opts.htmlFiles)
     .pipe(connect.reload())
@@ -95,4 +80,4 @@ gulp.task('watch', () => {
   );
 });
 
-gulp.task('default', ['html', 'connect', 'babel', 'browserify', 'sass', 'img', 'watch']);
+gulp.task('default', [...opts.watchTasks, 'connect', 'watch']);

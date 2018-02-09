@@ -28,7 +28,6 @@
     "gulp-connect": "^5.2.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-ruby-sass": "^3.0.0",
-    "gulp-smushit": "^1.2.0",
     "gulp-uglify": "^3.0.0",
     "vinyl-source-stream": "^2.0.0"
   },

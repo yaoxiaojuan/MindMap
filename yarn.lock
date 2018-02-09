@@ -2915,14 +2915,6 @@ gulp-ruby-sass@^3.0.0:
     rimraf "^2.2.8"
     vinyl "^2.1.0"
 
-gulp-smushit@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gulp-smushit/-/gulp-smushit-1.2.0.tgz#e2b6ae397f946f61d995b859dd34e8cf0be5f37d"
-  dependencies:
-    gulp-util "^3.0.7"
-    smosh "^1.2.0"
-    through2 "^2.0.1"
-
 gulp-uglify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gulp-uglify/-/gulp-uglify-3.0.0.tgz#0df0331d72a0d302e3e37e109485dddf33c6d1ca"
@@ -2935,7 +2927,7 @@ gulp-uglify@^3.0.0:
     uglify-js "^3.0.5"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3.0.0, gulp-util@^3.0.7:
+gulp-util@^3.0.0:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -5384,10 +5376,6 @@ slice-ansi@1.0.0, slice-ansi@^1.0.0:
 slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
-
-smosh@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/smosh/-/smosh-1.2.0.tgz#049a7aba2bb2a8f51e919048b908b0542f783df9"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
