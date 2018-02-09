@@ -1,4 +1,103 @@
-$main-color: #333;
-p {
-  color: $main-color;
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+$main-color: #009beb;
+$icon-size: 20px;
+$basic-size: 5px;
+$border-radius: $basic-size / 2;
+
+.wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.miss-tree,
+.miss-tree-child-tree {
+  position: relative;
+  li {
+    position: relative;
+    margin-left: $icon-size/2;
+    padding-left: $basic-size * 5;
+    border-left: 1px solid $main-color;
+    &:last-child {
+      border: 0 none;
+    }
+  }
+}
+.miss-tree {
+  text-align: left;
+  display: inline-block;
+}
+.miss-tree-child-tree {
+  &:before {
+    content: '';
+    height: $basic-size * 3;
+    border-left: 1px solid $main-color;
+    display: block;
+    margin-left: $icon-size/2;
+    position: absolute;
+    top: -$basic-size * 3;
+  }
+  li:first-child {
+    margin-top: $basic-size;
+  }
+  li:before {
+    content: '';
+    position: absolute;
+    width: $basic-size * 5;
+    height: $basic-size/2;
+    margin-top: $basic-size/2;
+    border-bottom: 1px solid #009beb;
+    border-left: 1px solid #009beb;
+    left: 0;
+    top: $basic-size + $icon-size/2;
+    display: block;
+    border-bottom-left-radius: $border-radius;
+  }
+  li:last-child:before {
+    top: 0;
+    height: $basic-size*2 + $icon-size/2;
+    border-left: 1px solid #009beb;
+    margin-top: 0;
+    border-bottom-left-radius: $border-radius * 2;
+  }
+}
+
+.miss-tree-node {
+  padding: $basic-size * 2 0;
+  display: inline-block;
+  line-height: $icon-size;
+  position: relative;
+  bottom: -2px;
+}
+.miss-tree-switcher:before {
+  content: '';
+  width: $icon-size;
+  border-radius: $icon-size;
+  background: $main-color;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  line-height: $icon-size;
+  font-weight: 300;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+.miss-tree-switcher_open:before {
+  content: '+';
+}
+.miss-tree-switcher_close:before {
+  content: '-';
+}
+.miss-tree-switcher_noop:before {
+  width: 0;
 }
