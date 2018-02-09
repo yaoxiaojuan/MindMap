@@ -1,0 +1,58 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "There are some useful, cool things in my workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyYao/workflow.git"
+  },
+  "author": "MissSi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luckyYao/workflow/issues"
+  },
+  "homepage": "https://github.com/luckyYao/workflow#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browserify": "^16.0.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-connect": "^5.2.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-smushit": "^1.2.0",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "ava": "^0.25.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-register": "^6.26.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "source": [
+      "**/*.{js,jsx}",
+      "!dist/**/*"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "compileEnhancements": false,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}
