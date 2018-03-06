@@ -61,7 +61,11 @@ const setTreeContent = () => {
 
 setTreeContent();
 
-// TODO: 绑定random事件
+// TODO: 优化random事件绑定方法
+const randomBtn = document.getElementById('random');
+randomBtn.addEventListener('click', () => {
+  setTreeContent();
+});
 
 
 // 通过Json文件获取数据

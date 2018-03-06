@@ -11,6 +11,13 @@ $icon-size: 20px;
 $basic-size: 5px;
 $border-radius: $basic-size / 2;
 
+.btn {
+  background: $main-color;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1000px;
   margin: 30px auto;
