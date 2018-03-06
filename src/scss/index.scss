@@ -17,8 +17,8 @@ $border-radius: $basic-size / 2;
   text-align: center;
 }
 
-.miss-tree,
-.miss-tree-child-tree {
+.tree,
+.tree-child-tree {
   position: relative;
   li {
     position: relative;
@@ -30,11 +30,11 @@ $border-radius: $basic-size / 2;
     }
   }
 }
-.miss-tree {
+.tree {
   text-align: left;
   display: inline-block;
 }
-.miss-tree-child-tree {
+.tree-child-tree {
   &:before {
     content: '';
     height: $basic-size * 3;
@@ -69,14 +69,14 @@ $border-radius: $basic-size / 2;
   }
 }
 
-.miss-tree-node {
+.tree-node {
   padding: $basic-size * 2 0;
   display: inline-block;
   line-height: $icon-size;
   position: relative;
   bottom: -2px;
 }
-.miss-tree-switcher:before {
+.tree-switcher:before {
   content: '';
   width: $icon-size;
   border-radius: $icon-size;
@@ -92,12 +92,12 @@ $border-radius: $basic-size / 2;
   position: relative;
   top: -2px;
 }
-.miss-tree-switcher_open:before {
+.tree-switcher_open:before {
   content: '+';
 }
-.miss-tree-switcher_close:before {
+.tree-switcher_close:before {
   content: '-';
 }
-.miss-tree-switcher_noop:before {
+.tree-switcher_noop:before {
   width: 0;
 }

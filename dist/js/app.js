@@ -1,1 +1,1 @@
-"use strict";var _index=require("./index");console.log(_index.firstName+" "+_index.lastName);
+"use strict";var getJSON=function(n,o){var e=new XMLHttpRequest;e.open("GET",n,!0),e.responseType="json",e.onload=function(){var n=e.status;console.log(e),o(200===n?null:n,e.response)},e.send()};getJSON("src/json/basic.json",function(n,o){null!==n?console.log("Something went wrong: "+n):console.log(o)});
