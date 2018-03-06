@@ -81,3 +81,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', [...opts.watchTasks, 'connect', 'watch']);
+// gulp.task('default', ['connect']);
