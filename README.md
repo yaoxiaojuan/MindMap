@@ -1,7 +1,7 @@
 # MindMap
 读取简单的JSON数据，以思维导图的方式展示这些数据。简单易用，支持无限极延伸。
 
-[MindMap](https://luckyyao.github.io/MindMap/)
+[MindMap](https://yaoxiaojuan.github.io/MindMap/)
 
 ## 数据结构
 
