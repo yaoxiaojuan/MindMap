@@ -75,13 +75,39 @@ window.addEventListener('load', () => {
   };
   // 绑定random data事件
   const bindRandomDataEvent = () => {
-    const randomBtnDom = document.getElementById('random');
-    randomBtnDom.addEventListener('click', () => {
+    const randomBtn = document.getElementById('random');
+    randomBtn.addEventListener('click', () => {
       setTreeContent(getTreeData());
+    });
+  };
+  // 绑定open all事件
+  const bindOpenAllEvent = () => {
+    const openAllBtn = document.getElementById('open');
+    openAllBtn.addEventListener('click', () => {
+      const treeSwitcher = document.querySelectorAll('.tree-switcher');
+      treeSwitcher.forEach((switcher) => {
+        switcher.classList.remove('tree-switcher_open');
+        switcher.classList.add('tree-switcher_close');
+        switcher.nextElementSibling.classList.remove('hidden');
+      });
+    });
+  };
+  // close all事件
+  const bindCloseAllEvent = () => {
+    const openAllBtn = document.getElementById('close');
+    openAllBtn.addEventListener('click', () => {
+      const treeSwitcher = document.querySelectorAll('.tree-switcher');
+      treeSwitcher.forEach((switcher) => {
+        switcher.classList.add('tree-switcher_open');
+        switcher.classList.remove('tree-switcher_close');
+        switcher.nextElementSibling.classList.add('hidden');
+      });
     });
   };
   setTreeContent(getTreeData());
   bindRandomDataEvent();
+  bindOpenAllEvent();
+  bindCloseAllEvent();
 });
 
 // 通过Json文件获取数据
