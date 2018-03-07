@@ -92,7 +92,7 @@ window.addEventListener('load', () => {
       });
     });
   };
-  // close all事件
+  // 绑定close all事件
   const bindCloseAllEvent = () => {
     const openAllBtn = document.getElementById('close');
     openAllBtn.addEventListener('click', () => {
@@ -104,10 +104,25 @@ window.addEventListener('load', () => {
       });
     });
   };
+  // 绑定change tree事件
+  const bindChangeTreeEvent = () => {
+    const options = document.querySelectorAll('#types .selector__option');
+    const selectorBtn = document.querySelector('#types .selector__btn');
+    const tree = document.getElementById('tree');
+    options.forEach((option) => {
+      if (!option.classList.contains('disabled')) {
+        option.addEventListener('click', () => {
+          selectorBtn.innerHTML = option.innerHTML;
+          tree.className = option.getAttribute('value');
+        });
+      }
+    });
+  }
   setTreeContent(getTreeData());
   bindRandomDataEvent();
   bindOpenAllEvent();
   bindCloseAllEvent();
+  bindChangeTreeEvent();
 });
 
 // 通过Json文件获取数据

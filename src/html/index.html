@@ -7,10 +7,19 @@
 </head>
 <body>
 <div class="wrapper">
-  <div>
+  <div class="operation">
     <button class="btn m-l-15 m-r-15" id="random">Random Data</button>
     <button class="btn m-l-15 m-r-15" id="open">Open All</button>
     <button class="btn m-l-15 m-r-15" id="close">Close All</button>
+    <div class="selector" id="types">
+      <button class="selector__btn btn m-l-15 icon-arrow">Tree-vertical</button>
+      <ul class="selector__options">
+        <li class="selector__option selected" value="tree">Tree-vertical</li>
+        <li class="selector__option disabled" value="tree_horizontal">Tree-horizontal</li>
+        <li class="selector__option disabled" value="time-line_vertical">TimeLine-horizontal</li>
+        <li class="selector__option disabled" value="time-line_horizontal">TimeLine-horizontal</li>
+      </ul>
+    </div>
   </div>
 
   <div class="tree" id="tree">
