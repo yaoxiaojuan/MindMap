@@ -11,6 +11,10 @@ $icon-size: 20px;
 $basic-size: 5px;
 $border-radius: $basic-size / 2;
 
+.hidden {
+  display: none;
+}
+
 .btn {
   background: $main-color;
   color: #fff;
@@ -21,7 +25,6 @@ $border-radius: $basic-size / 2;
 .wrapper {
   max-width: 1000px;
   margin: 30px auto;
-  text-align: center;
 }
 
 .tree,
@@ -82,6 +85,7 @@ $border-radius: $basic-size / 2;
   line-height: $icon-size;
   position: relative;
   bottom: -2px;
+  cursor: pointer;
 }
 .tree-switcher:before {
   content: '';

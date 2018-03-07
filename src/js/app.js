@@ -3,16 +3,18 @@ const getRandomNum = max => Math.ceil(Math.random() * max);
 const getRandomStr = () => Math.random().toString(36).substr(2);
 
 // 获取节点模板
-const getNodeDom = node => `<span class="tree-switcher tree-switcher_close tree-node">${node.text}</span>`;
+const getNodeDom = (node, nodeClasses) => `<span class="${nodeClasses}">${node.text}</span>`;
 const getChildDom = (childData) => {
   if (childData.length === 0) {
     return '';
   }
   let str = '<ul class="tree-child-tree">';
   childData.map((node) => {
+    const childLength = node.children.length;
+    const nodeClasses = childLength === 0 ? 'tree-node' : 'tree-switcher tree-switcher_close tree-node';
     str += '<li>';
-    str += getNodeDom(node.data);
-    if (node.children.length === 0) {
+    str += getNodeDom(node.data, nodeClasses);
+    if (childLength === 0) {
       str += '</li>';
     } else {
       str += getChildDom(node.children);
@@ -48,23 +50,38 @@ const getTreeData = () => {
         id: getRandomStr(),
         text: '根节点',
       },
-      children: randomTreeNodes(getRandomNum(2), getRandomNum(10)),
+      children: randomTreeNodes(getRandomNum(3), getRandomNum(10)),
     },
   });
 };
 
 window.addEventListener('load', () => {
+  // 绑定节点toggle事件
+  const bindNodeToggleEvent = () => {
+    const treeSwitcher = document.querySelectorAll('.tree-switcher');
+    treeSwitcher.forEach((switcher) => {
+      switcher.addEventListener('click', () => {
+        switcher.classList.toggle('tree-switcher_close');
+        switcher.classList.toggle('tree-switcher_open');
+        switcher.nextElementSibling.classList.toggle('hidden');
+      });
+    });
+  };
   // 重绘DOM树
   const setTreeContent = (treeData) => {
     const treeDom = document.getElementById('tree');
-    treeDom.innerHTML = getNodeDom(treeData.root.data) + getChildDom(treeData.root.children);
+    treeDom.innerHTML = getNodeDom(treeData.root.data, 'tree-switcher tree-switcher_close tree-node') + getChildDom(treeData.root.children);
+    bindNodeToggleEvent();
+  };
+  // 绑定random data事件
+  const bindRandomDataEvent = () => {
+    const randomBtnDom = document.getElementById('random');
+    randomBtnDom.addEventListener('click', () => {
+      setTreeContent(getTreeData());
+    });
   };
   setTreeContent(getTreeData());
-  // 绑定random data事件
-  const randomBtnDom = document.getElementById('random');
-  randomBtnDom.addEventListener('click', () => {
-    setTreeContent(getTreeData());
-  });
+  bindRandomDataEvent();
 });
 
 // 通过Json文件获取数据
