@@ -45,6 +45,7 @@ ul {
 .selector {
   display: inline-block;
   position: relative;
+  vertical-align: top;
 
   &:hover {
     .icon-arrow:after {
